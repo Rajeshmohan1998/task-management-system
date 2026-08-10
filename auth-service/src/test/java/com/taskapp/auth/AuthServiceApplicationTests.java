@@ -1,4 +1,4 @@
-package com.rajesh.auth_service;
+package com.taskapp.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

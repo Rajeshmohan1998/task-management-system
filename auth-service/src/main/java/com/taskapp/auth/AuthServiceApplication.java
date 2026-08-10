@@ -1,4 +1,4 @@
-package com.rajesh.auth_service;
+package com.taskapp.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
