@@ -1,0 +1,117 @@
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.brand-panel {
+  background: #F4F1EC;
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.brand-panel .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0F6E56;
+}
+
+.brand-panel h1 {
+  font-size: 28px;
+  margin: 0;
+  max-width: 340px;
+}
+
+.brand-panel p {
+  color: #666;
+  max-width: 300px;
+}
+
+.form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.form-panel form {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-panel h2 {
+  margin: 0 0 4px;
+}
+
+.subtext {
+  color: #888;
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.form-panel label {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.form-panel input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-panel button {
+  margin-top: 16px;
+  padding: 12px;
+  background: #1D9E75;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form-panel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.switch {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.switch a {
+  color: #1D9E75;
+  cursor: pointer;
+}
+
+.field-error {
+  color: #c0392b;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+@media (max-width: 700px) {
+  .login-page { grid-template-columns: 1fr; }
+  .brand-panel { display: none; }
+}

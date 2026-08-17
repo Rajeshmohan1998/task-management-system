@@ -1,0 +1,65 @@
+<div class="login-page">
+
+    <div class="brand-panel">
+        <div class="logo"><i class="ti ti-checklist"></i> TaskFlow</div>
+        <h1>Everything you own, in order.</h1>
+        <p>Assign, prioritize, and track work across your team.</p>
+    </div>
+
+    <div class="form-panel">
+
+        <form *ngIf="mode === 'login'" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+            <h2>Log in</h2>
+            <p class="subtext">Welcome back. Enter your details.</p>
+
+            <label>Username</label>
+            <input type="text" formControlName="username" placeholder="j.doe" />
+            <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="field-error">
+                Username is required.
+            </div>
+
+            <label>Password</label>
+            <input type="password" formControlName="password" placeholder="••••••••" />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="field-error">
+                Password is required.
+            </div>
+
+            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+            <button type="submit" [disabled]="loginForm.invalid">Log in</button>
+            <p class="switch">No account? <a (click)="toggleMode()">Register</a></p>
+        </form>
+
+        <form *ngIf="mode === 'register'" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+            <h2>Create account</h2>
+            <p class="subtext">Set up your login details.</p>
+
+            <label>Username</label>
+            <input type="text" formControlName="userName" placeholder="j.doe" />
+            <div *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched"
+                class="field-error">
+                Username must be at least 3 characters.
+            </div>
+
+            <label>Email</label>
+            <input type="email" formControlName="email" placeholder="name@company.com" />
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="field-error">
+                Enter a valid email address.
+            </div>
+
+            <label>Password</label>
+            <input type="password" formControlName="password" placeholder="••••••••" />
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                class="field-error">
+                Password must be at least 8 characters.
+            </div>
+
+            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+            <button type="submit" [disabled]="registerForm.invalid">Register</button>
+            <p class="switch">Already have an account? <a (click)="toggleMode()">Log in</a></p>
+        </form>
+
+    </div>
+
+</div>
